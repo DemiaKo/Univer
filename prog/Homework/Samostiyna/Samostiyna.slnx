@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Samostiyna/Samostiyna.vcxproj" Id="b5ca498c-21de-4e95-aee7-4f875d9e9bed" />
+</Solution>
