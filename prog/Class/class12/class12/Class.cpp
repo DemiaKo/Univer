@@ -61,6 +61,49 @@ Array& Array::add(int num) {
 	return *this;	
 }
 
+Array& Array::add(int num, int in) {
+	int* ar = new int[n + 1];
+	for (int i = 0; i < in; i++) ar[i] = a[i];
+	ar[in] = num;
+	for (int i = in+1; i < n+1; i++) ar[i] = a[i-1];
+	delete[]a;
+	n++;
+	a = ar;
+	return *this;
+
+}
+
+Array& Array::del(int in) {
+	if (in >= n) {
+		cout << "Out of range" << endl;
+		return *this;
+	}
+
+	int* ar = new int[n - 1];
+	for (int i = 0; i < in; i++) ar[i] = a[i];
+	for (int i = in + 1 ; i < n; i++) ar[i-1] = a[i];
+	delete[]a;
+	n--;
+	a = ar;
+	return *this;
+}
+
+Array& Array::del() {
+	int* ar = new int[n - 1];
+	for (int i = 0; i < n-1; i++) ar[i] = a[i];
+	delete[]a;
+	n--;
+	a = ar;
+	return *this;
+}
+
+Array& Array::clear() {
+	delete[]a;
+	n = 0;
+	a = new int[n];
+	return *this;
+}
+
 Array& Array::operator=(const Array& ar) {
 	if (this == &ar) return *this;
 

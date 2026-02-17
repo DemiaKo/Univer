@@ -15,6 +15,10 @@ public:
 	int operator[](int);
 	~Array();
 	Array& add(int);
+	Array& add(int, int);
+	Array& del(int);
+	Array& del();
+	Array& clear();
 	Array& operator=(const Array&);
 	friend ostream& operator<<(ostream&, const Array&);
 };
