@@ -43,9 +43,9 @@ int main() {
 	ser2 /= 100000;
 	ser3 /= 100000;
 	
-
-	
 	cout << "Method 1: " << ser1.count() << " Method 2: " << ser2.count() << " Method 3: " << ser3.count() << endl;
+
+	return(0);
 }
 
 int Max_I(int a, int b, int c) {
