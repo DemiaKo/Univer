@@ -3,14 +3,14 @@
 int main() {
 	srand(time(NULL));
 	int a;
-	chrono::nanoseconds ser1(0), ser2(0), ser3(0);
+	double ser1, ser2, ser3;
 	auto start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < 1000000; i++) {
 		a = 1 + rand() / 1000000;
 		Method_1(a);
 	}
 	auto end = chrono::high_resolution_clock::now();
-	ser1 = chrono::duration_cast<chrono::nanoseconds>(end - start);
+	ser1 = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
 	start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < 1000000; i++) {
@@ -18,7 +18,7 @@ int main() {
 		Method_2(a);
 	}
 	end = chrono::high_resolution_clock::now();
-	ser2 = chrono::duration_cast<chrono::nanoseconds>(end - start);
+	ser2 = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
 	start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < 1000000; i++) {
@@ -26,13 +26,13 @@ int main() {
 		Method_3(a);
 	}
 	end = chrono::high_resolution_clock::now();
-	ser3 = chrono::duration_cast<chrono::nanoseconds>(end - start);
+	ser3 = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
 
 	ser1 /= 1000000;
 	ser2 /= 1000000;
 	ser3 /= 1000000;
 
-	cout << "Method_1: " << ser1.count() << " Method_2: " << ser2.count() << " Method_3: " << ser3.count() << endl;
+	cout << "Method_1: " << ser1 << " Method_2: " << ser2 << " Method_3: " << ser3 << endl;
 
 
 	return(0);
@@ -53,6 +53,7 @@ bool Method_2(int n, int i) {
 
 	return Method_2(n, ++i);
 }
+
 bool Method_3(int n) {
 	if (n <= 1) return false;
 	if (n <= 3) return true;
