@@ -2,7 +2,7 @@
 
 int main() {
 	srand(time(NULL));
-	int a;
+	long long a = 92233720136854775806;
 	double ser1, ser2, ser3;
 	auto start = chrono::high_resolution_clock::now();
 	for (int i = 0; i < 1000000; i++) {
