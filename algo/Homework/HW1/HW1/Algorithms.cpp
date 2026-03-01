@@ -26,11 +26,11 @@ void merge(int* arr, int left, int mid, int right) {
     while (i < n1) arr[k++] = L[i++];
     while (j < n2) arr[k++] = R[j++];
 
-    std::cout << "Step[" << merge_step++ << "] merged [" << left << "-" << right << "]: ";
-    for (int x = left; x <= right; x++) {
-        std::cout << arr[x] << " ";
+    cout << "Step[" << merge_step++ << "] merged [" << left << "-" << right << "]: ";
+    for (int i = left; i <= right; i++) {
+        cout << arr[i] << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     delete[] L;
     delete[] R;
@@ -77,14 +77,14 @@ void strandSort(int* arr, int n) {
         int strand_size = 0;
         strand[strand_size++] = arr[0];
 
-        for (int x = 0; x < current_n - 1; x++) arr[x] = arr[x + 1];
+        for (int i = 0; i < current_n - 1; i++) arr[i] = arr[i + 1];
         current_n--;
 
         int i = 0;
         while (i < current_n) {
             if (arr[i] >= strand[strand_size - 1]) {
                 strand[strand_size++] = arr[i];
-                for (int x = i; x < current_n - 1; x++) arr[x] = arr[x + 1];
+                for (int j = i; j < current_n - 1; j++) arr[j] = arr[j + 1];
                 current_n--;
             }
             else {
@@ -94,11 +94,11 @@ void strandSort(int* arr, int n) {
 
         mergeStrands(sorted_arr, sorted_size, strand, strand_size);
 
-        std::cout << "Step[" << step++ << "]: ";
-        for (int s = 0; s < sorted_size; s++) std::cout << sorted_arr[s] << " ";
-        std::cout << "| ";
-        for (int s = 0; s < current_n; s++) std::cout << arr[s] << " ";
-        std::cout << std::endl;
+        cout << "Step[" << step++ << "]: ";
+        for (int s = 0; s < sorted_size; s++) cout << sorted_arr[s] << " ";
+        cout << "| ";
+        for (int s = 0; s < current_n; s++) cout << arr[s] << " ";
+        cout << endl;
     }
 
     for (int i = 0; i < n; i++) arr[i] = sorted_arr[i];

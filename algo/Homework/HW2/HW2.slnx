@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HW2/HW2.vcxproj" Id="c2e63bf6-845d-485f-b1aa-0cbff5e7c618" />
+  <Project Path="StackTests/StackTests.vcxproj" />
+</Solution>
