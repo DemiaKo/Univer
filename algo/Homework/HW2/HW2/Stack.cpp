@@ -25,7 +25,7 @@ Stack<T>::~Stack() {
 }
 
 template <typename T>
-void Stack<T>::push(const T& el) {
+void Stack<T>::push(T el) {
     if (topIndex == capacity - 1) {
         resize();
     }
@@ -33,10 +33,11 @@ void Stack<T>::push(const T& el) {
 }
 
 template <typename T>
-void Stack<T>::pop() {
+Stack<T>& Stack<T>::pop() {
     if (topIndex >= 0) {
         topIndex--;
     }
+    return(*this);
 }
 
 template <typename T>

@@ -1,6 +1,7 @@
 #include "Stack.h"
 #include <iostream>
 #include <stack>
+#include <string>
 #include <Windows.h>
 using namespace std;
 
@@ -11,12 +12,9 @@ int main() {
 
     cout << "--- Демонстрація ВЛАСНОГО стеку ---" << endl;
     Stack<int> myStack;
+    
 
     cout << "Стек порожній? " << (myStack.isEmpty() ? "Так" : "Ні") << endl;
-
-    myStack.push(10);
-    myStack.push(20);
-    myStack.push(30);
     cout << "Додали 10, 20, 30. Розмір стеку: " << myStack.size() << endl;
 
     cout << "Верхній елемент: " << myStack.top() << endl;
@@ -43,6 +41,6 @@ int main() {
     cout << "Видалили верхній елемент (pop). Новий верхній елемент: " << stlStack.top() << endl;
     cout << "Новий розмір: " << stlStack.size() << endl;
     cout << "Стек порожній? " << (stlStack.empty() ? "Так" : "Ні") << endl;
-
+    */
     return(0);
 }

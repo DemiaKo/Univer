@@ -1,0 +1,4 @@
+3
+L Asus Tuf | Intel Core | 32 43 Nvidia ge | 32 12
+D Mac Mini | Apple M2 | 32 42 Apple Graph | 23 mini
+L Asus Tuf | Intel Core | 32 43 Nvidia ge | 32 122

@@ -12,11 +12,9 @@ private:
 public:
     Stack(int = 2);
     ~Stack();
-
-    void push(const T&);
-    void pop();
+    void push(T);
+    Stack& pop();
     T top() const;
-
     bool isEmpty() const;
     int size() const;
 };
