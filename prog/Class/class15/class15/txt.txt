@@ -1,0 +1,8 @@
+7
+M Br ce | Mo mo | 34 54
+E Br fr | Mo s2 | dwq xs | xwq ce
+E Br fr | Mo s4 | dwq xs | xwq ce
+E Br fr | Mo s3 | dwq xs | xwq ce
+E Br fr | Mo s6 | dwq xs | xwq ce
+E Br fr | Mo s5 | dwq x | xwq ce
+M Br ce | Mo mo | 34 33

@@ -71,6 +71,20 @@ void Table::resize(int r, int c)
     cols = c;
 }
 
+std::string Table::search(float num) const
+{
+    std::string ans = "";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (ar[i * cols + j] == num) {
+                if (ans != "") ans += ", ";
+                ans += "[" + std::to_string(i) + "][" + std::to_string(j) + "]";
+            }
+        }
+    }
+    return ans;
+}
+
 Table& Table::operator=(const Table& other)
 {
     if (this == &other) return *this;

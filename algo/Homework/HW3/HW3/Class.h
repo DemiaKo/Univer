@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdexcept>
+#include <string>
 
 class Table {
 private:
@@ -23,6 +24,7 @@ public:
 	void print(std::ostream&) const;
 	void input(std::istream&);
 	void resize(int r, int c);
+	std::string search(float) const;
 	Table& operator=(const Table&);
 	~Table() { delete[] ar; }
 };
