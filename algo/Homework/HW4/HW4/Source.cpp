@@ -1,41 +1,95 @@
 #include "Classes.h"
 #include <Windows.h>
+#include <iostream>
+#include <string>
+
 using namespace std;
+
+// Допоміжна функція для виводу меню на екран
+void printMenu() {
+    cout << "\n=== Меню Хеш-таблиці ===" << endl;
+    cout << "1. Додати або оновити елемент" << endl;
+    cout << "2. Знайти значення за ключем" << endl;
+    cout << "3. Видалити елемент" << endl;
+    cout << "4. Вивести всю таблицю на екран" << endl;
+    cout << "0. Вийти з програми" << endl;
+    cout << "Оберіть дію: ";
+}
 
 int main() {
     SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 
-    Table t = {};
+    Table t;
+    int choice;
+    string key;
+    int value;
 
-    t.insert("Orange", 2);
-    t.insert("Apple", 3);
+    while (true) {
+        printMenu();
 
-    t["Banana"] = 6;
-    t["Apple"] = 100;
+        if (!(cin >> choice)) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Помилка: введіть номер пункту меню!" << endl;
+            continue;
+        }
 
-    cout << "--- Поточна таблиця ---" << endl;
-    cout << t << endl;
+        if (choice == 0) {
+            cout << "Вихід з програми. Навседобре!" << endl;
+            break;
+        }
 
-    cout << "--- Перевірка пошуку ---" << endl;
-    try {
-        cout << "Banana value: " << t.get("Banana") << endl;
-        cout << "Kiwi value: " << t.get("Kiwi") << endl;
-    }
-    catch (const std::out_of_range& e) {
-        cout << "Спіймано виняток: " << e.what() << endl;
-    }
+        switch (choice) {
+        case 1:
+            cout << "Введіть ключ (слово): ";
+            cin >> key;
+            cout << "Введіть значення (ціле число): ";
 
-    cout << "\n--- Перевірка видалення ---" << endl;
-    t.remove("Orange");
-    cout << "Таблиця після видалення Orange:" << endl;
-    cout << t << endl;
+            while (!(cin >> value)) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "Помилка: значення має бути числом. Введіть ще раз: ";
+            }
 
-    try {
-        t.remove("Mango");
-    }
-    catch (const std::out_of_range& e) {
-        cout << "Спіймано виняток при видаленні: " << e.what() << endl;
+            t.insert(key, value);
+            cout << "[Успіх] Елемент [" << key << " : " << value << "] записано!" << endl;
+            break;
+
+        case 2:
+            cout << "Введіть ключ для пошуку: ";
+            cin >> key;
+            try {
+                int res = t.get(key);
+                cout << "--> Знайдено значення: " << res << endl;
+            }
+            catch (const out_of_range& e) {
+                cout << "[Помилка] " << e.what() << endl;
+            }
+            break;
+
+        case 3:
+            cout << "Введіть ключ для видалення: ";
+            cin >> key;
+            try {
+                t.remove(key);
+                cout << "[Успіх] Елемент з ключем '" << key << "' видалено." << endl;
+            }
+            catch (const out_of_range& e) {
+                cout << "[Помилка] " << e.what() << endl;
+            }
+            break;
+
+        case 4:
+            cout << "\n--- Вміст хеш-таблиці ---" << endl;
+            cout << t;
+            cout << "-------------------------" << endl;
+            break;
+
+        default:
+            cout << "[Помилка] Невідома команда. Оберіть число від 0 до 4." << endl;
+            break;
+        }
     }
 
     return 0;
