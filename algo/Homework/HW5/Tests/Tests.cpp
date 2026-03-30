@@ -16,7 +16,7 @@ namespace CalculatorTests
 			std::string expected_rpn = "2 3 + ";
 
 			Assert::IsTrue(expected_rpn == to_pol(expr));
-			Assert::AreEqual(5, calc(expected_rpn));
+			Assert::AreEqual((double)5, calc(expected_rpn));
 		}
 
 		TEST_METHOD(TestOperatorPrecedence)
@@ -25,7 +25,7 @@ namespace CalculatorTests
 			std::string expected_rpn = "2 3 4 * + ";
 
 			Assert::IsTrue(expected_rpn == to_pol(expr));
-			Assert::AreEqual(14, calc(expected_rpn));
+			Assert::AreEqual((double)14, calc(expected_rpn));
 		}
 
 		TEST_METHOD(TestParentheses)
@@ -34,7 +34,7 @@ namespace CalculatorTests
 			std::string expected_rpn = "2 3 + 4 * ";
 
 			Assert::IsTrue(expected_rpn == to_pol(expr));
-			Assert::AreEqual(20, calc(expected_rpn));
+			Assert::AreEqual((double)20, calc(expected_rpn));
 		}
 
 		TEST_METHOD(TestMultiDigitNumbers)
@@ -43,7 +43,7 @@ namespace CalculatorTests
 			std::string expected_rpn = "150 10 / 25 + ";
 
 			Assert::IsTrue(expected_rpn == to_pol(expr));
-			Assert::AreEqual(40, calc(expected_rpn));
+			Assert::AreEqual((double)40, calc(expected_rpn));
 		}
 
 		TEST_METHOD(TestExponentiation)
@@ -52,7 +52,7 @@ namespace CalculatorTests
 			std::string expected_rpn = "3 2 ^ 1 + ";
 
 			Assert::IsTrue(expected_rpn == to_pol(expr));
-			Assert::AreEqual(10, calc(expected_rpn));
+			Assert::AreEqual((double)10, calc(expected_rpn));
 		}
 
 		TEST_METHOD(TestDivisionByZeroException)

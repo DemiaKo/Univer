@@ -62,39 +62,48 @@ int Stack<T>::size() const {
 std::string to_pol(std::string s) {
     Stack<char> st;
     std::string res = "";
+    bool may_be_unary = true;
     for (int i = 0; i < s.length(); i++) {
         if (s[i] == ' ') {
             continue;
         }
         else if (isdigit(s[i])) {
-            while (i < s.length() && isdigit(s[i])) {
+            while (i < s.length() && (isdigit(s[i]) || s[i]=='.')) {
                 res += s[i++];
             }
             res += " ";
             i--;
+            may_be_unary = false;
         }
         else if (is_op(s[i])) {
+            char op = s[i];
+            if (op == '-' && may_be_unary) {
+                op = '~';             
+            }
             if (st.isEmpty()) {
-                st.push(s[i]);
+                st.push(op);
             }
-            else if (prior(st.top()) < prior(s[i])) {
-                st.push(s[i]);
+            else if (prior(st.top()) < prior(op)) {
+                st.push(op);
             }
-            else if (prior(st.top()) >= prior(s[i])) {
-                while (!st.isEmpty() && prior(st.top()) >= prior(s[i])) {
+            else if (prior(st.top()) >= prior(op)) {
+                while (!st.isEmpty() && prior(st.top()) >= prior(op)) {
                     res = res + st.pop() + " ";
                 }
-                st.push(s[i]);
+                st.push(op);
             }
+            may_be_unary = true;
         } 
         else if (s[i] == '(') {
             st.push(s[i]);
+            may_be_unary = true;
         }
         else if (s[i] == ')') {
             while (st.top() != '(') {
                 res = res + st.pop() + " ";
             }
             st.pop();
+            may_be_unary = false;
         }
     }
     while (!st.isEmpty()) res = res + st.pop() + " ";
@@ -103,7 +112,7 @@ std::string to_pol(std::string s) {
 
 bool is_op(char c)
 {
-    if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^') return true;
+    if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == '~') return true;
     return false;
 }
 
@@ -111,38 +120,45 @@ int prior(char c)
 {
     if (c == '+' || c == '-') return(1);
     if (c == '*' || c == '/') return(2);
-    if (c == '^') return(3);
+    if (c == '~') return(3);
+    if (c == '^') return(4);
     return(0);
 }
 
-int calc(std::string s) {
-    Stack<int> st;
-    int res = 0;
+double calc(std::string s) {
+    Stack<double> st;
+    double res = 0;
     for (int i = 0; i < s.length(); i++) {
         if (s[i] == ' ') {
             continue;
         }
         else if (isdigit(s[i])) {
             std::string t = "";
-            while (i < s.length() && isdigit(s[i])) {
+            while (i < s.length() && (isdigit(s[i]) || s[i] == '.')) {
                 t += s[i++];
             }
-            st.push(std::stoi(t));
+            st.push(std::stod(t));
             i--;
         }
         else if (is_op(s[i])) {
-            int n2 = st.pop(), n1 = st.pop();
-            switch (s[i]) {
-            case '+': st.push(n1 + n2); break;
-            case '-': st.push(n1 - n2); break;
-            case '*': st.push(n1 * n2); break;
-            case '/':
-                if (n2 == 0) {
-                    throw std::runtime_error("Ділення на нуль!");
+            if (s[i] == '~') {
+                double n = st.pop();
+                st.push(-n);
+            }
+            else {
+                double n2 = st.pop(), n1 = st.pop();
+                switch (s[i]) {
+                case '+': st.push(n1 + n2); break;
+                case '-': st.push(n1 - n2); break;
+                case '*': st.push(n1 * n2); break;
+                case '/':
+                    if (n2 == 0) {
+                        throw std::runtime_error("Ділення на нуль!");
+                    }
+                    st.push(n1 / n2);
+                    break;
+                case '^': st.push(pow(n1, n2)); break;
                 }
-                st.push(n1 / n2);
-                break;
-            case '^': st.push(pow(n1, n2)); break;
             }
         }
     }

@@ -23,4 +23,4 @@ public:
 std::string to_pol(std::string);
 bool is_op(char);
 int prior(char);
-int calc(std::string);
+double calc(std::string);  
