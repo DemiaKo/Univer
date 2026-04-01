@@ -38,6 +38,10 @@ SparseMatrix<T>& SparseMatrix<T>::operator=(const SparseMatrix& other) {
 template <typename T>
 void SparseMatrix<T>::set(int r, int c, T v) {
 	checkBounds(r, c);
+	if (v == T{}) {
+		remove(r, c);
+		return;
+	}
 	Node* pr = get_p_r(r, c);
 	Node* pc = get_p_c(r, c);
 	if (pr->left == pc->up) {
@@ -65,6 +69,20 @@ T SparseMatrix<T>::get(int r, int c) const {
 		return pc->up->value;
 	}
 	return T{};
+}
+
+template<typename T>
+void SparseMatrix<T>::remove(int r, int c) {
+	checkBounds(r, c);
+	Node* pr = get_p_r(r, c);
+	Node* pc = get_p_c(r, c);
+
+	if (pr->left == pc->up) {
+		Node* target = pr->left;
+		pr->left = target->left;
+		pc->up = target->up;
+		delete target;
+	}
 }
 
 template <typename T>

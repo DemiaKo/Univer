@@ -51,6 +51,7 @@ public:
 	SM operator[](int r) { return SM(*this, r); }
 	void set(int, int, T);
 	T get(int, int) const;
+	void remove(int, int);
 	friend std::ostream& operator<<(std::ostream& os, const SparseMatrix<T>& m) {
 		for (int i = 0; i < m.srows; i++) {
 			for (int j = 0; j < m.scols; j++) {

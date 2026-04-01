@@ -37,6 +37,21 @@ namespace SparseMatrixTests
 			Assert::AreEqual(99, val);
 		}
 
+		TEST_METHOD(Test_Remove_Element_By_Setting_Zero)
+		{
+			SparseMatrix<int> m(3, 3);
+			m[1][1] = 42;
+			m[1][2] = 99;
+			m[2][1] = 77;
+			Assert::AreEqual(42, (int)m[1][1]);
+			Assert::AreEqual(99, (int)m[1][2]);
+
+			m[1][1] = 0;
+			Assert::AreEqual(0, (int)m[1][1]);
+			Assert::AreEqual(99, (int)m[1][2]);
+			Assert::AreEqual(77, (int)m[2][1]);
+		}
+
 		TEST_METHOD(Test_Deep_Copy_Constructor)
 		{
 			SparseMatrix<int> original(2, 2);
