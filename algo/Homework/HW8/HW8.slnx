@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HW8/HW8.vcxproj" Id="4306dd35-e56f-43a3-bcfa-89433a4bf4f0" />
+  <Project Path="Tests/Tests.vcxproj" />
+</Solution>

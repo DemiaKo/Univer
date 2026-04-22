@@ -4,4 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="HW2/HW2.vcxproj" Id="649a3d40-6b84-4fc8-b782-9d9d45b1718a" />
+  <Project Path="Tests/Tests.vcxproj" />
 </Solution>

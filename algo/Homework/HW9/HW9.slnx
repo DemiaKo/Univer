@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HW9/HW9.vcxproj" Id="a03b6d4e-145e-4bdc-84de-1cd2850cdfa1" />
+  <Project Path="Tests/Tests.vcxproj" />
+</Solution>
