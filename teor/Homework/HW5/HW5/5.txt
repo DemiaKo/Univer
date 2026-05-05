@@ -1,0 +1,172 @@
+171
+q1'0'' '' ' > '0'' '' 'RNNq1
+q1'1'' '' ' > '1'' '' 'RNNq1
+q1'/'' '' ' > '/'' '' 'RNNq2
+q2'0'' '' ' > ' ''0'' 'RRNq2
+q2'1'' '' ' > ' ''1'' 'RRNq2
+q2' '' '' ' > ' '' '' 'LLNq_prep
+q_prep' ''0'' ' > ' ''0'' 'LNNq_prep
+q_prep' ''1'' ' > ' ''1'' 'LNNq_prep
+q_prep'/''0'' ' > ' ''0'' 'LNNq_sub
+q_prep'/''1'' ' > ' ''1'' 'LNNq_sub
+q_sub'0''0'' ' > '0''0'' 'LLNq_sub
+q_sub'0''1'' ' > '1''1'' 'LLNq_borrow
+q_sub'1''0'' ' > '1''0'' 'LLNq_sub
+q_sub'1''1'' ' > '0''1'' 'LLNq_sub
+q_sub'0'' '' ' > '0'' '' 'LLNq_sub
+q_sub'1'' '' ' > '1'' '' 'LLNq_sub
+q_sub' ''0'' ' > '0''0'' 'LLNq_sub
+q_sub' ''1'' ' > '1''1'' 'LLNq_borrow
+q_sub' '' '' ' > ' '' '' 'NNNq_inc_Q
+q_sub'0''0''0' > '0''0''0'LLNq_sub
+q_sub'0''1''0' > '1''1''0'LLNq_borrow
+q_sub'1''0''0' > '1''0''0'LLNq_sub
+q_sub'1''1''0' > '0''1''0'LLNq_sub
+q_sub'0'' ''0' > '0'' ''0'LLNq_sub
+q_sub'1'' ''0' > '1'' ''0'LLNq_sub
+q_sub' ''0''0' > '0''0''0'LLNq_sub
+q_sub' ''1''0' > '1''1''0'LLNq_borrow
+q_sub' '' ''0' > ' '' ''0'NNNq_inc_Q
+q_sub'0''0''1' > '0''0''1'LLNq_sub
+q_sub'0''1''1' > '1''1''1'LLNq_borrow
+q_sub'1''0''1' > '1''0''1'LLNq_sub
+q_sub'1''1''1' > '0''1''1'LLNq_sub
+q_sub'0'' ''1' > '0'' ''1'LLNq_sub
+q_sub'1'' ''1' > '1'' ''1'LLNq_sub
+q_sub' ''0''1' > '0''0''1'LLNq_sub
+q_sub' ''1''1' > '1''1''1'LLNq_borrow
+q_sub' '' ''1' > ' '' ''1'NNNq_inc_Q
+q_borrow'0''0'' ' > '1''0'' 'LLNq_borrow
+q_borrow'0''1'' ' > '0''1'' 'LLNq_borrow
+q_borrow'1''0'' ' > '0''0'' 'LLNq_sub
+q_borrow'1''1'' ' > '1''1'' 'LLNq_borrow
+q_borrow'0'' '' ' > '1'' '' 'LLNq_borrow
+q_borrow'1'' '' ' > '0'' '' 'LLNq_sub
+q_borrow' ''0'' ' > '1''0'' 'LLNq_borrow
+q_borrow' ''1'' ' > '0''1'' 'LLNq_sub
+q_borrow' '' '' ' > ' '' '' 'NNNq_overdraw_align
+q_borrow'0''0''0' > '1''0''0'LLNq_borrow
+q_borrow'0''1''0' > '0''1''0'LLNq_borrow
+q_borrow'1''0''0' > '0''0''0'LLNq_sub
+q_borrow'1''1''0' > '1''1''0'LLNq_borrow
+q_borrow'0'' ''0' > '1'' ''0'LLNq_borrow
+q_borrow'1'' ''0' > '0'' ''0'LLNq_sub
+q_borrow' ''0''0' > '1''0''0'LLNq_borrow
+q_borrow' ''1''0' > '0''1''0'LLNq_sub
+q_borrow' '' ''0' > ' '' ''0'NNNq_overdraw_align
+q_borrow'0''0''1' > '1''0''1'LLNq_borrow
+q_borrow'0''1''1' > '0''1''1'LLNq_borrow
+q_borrow'1''0''1' > '0''0''1'LLNq_sub
+q_borrow'1''1''1' > '1''1''1'LLNq_borrow
+q_borrow'0'' ''1' > '1'' ''1'LLNq_borrow
+q_borrow'1'' ''1' > '0'' ''1'LLNq_sub
+q_borrow' ''0''1' > '1''0''1'LLNq_borrow
+q_borrow' ''1''1' > '0''1''1'LLNq_sub
+q_borrow' '' ''1' > ' '' ''1'NNNq_overdraw_align
+q_inc_Q' '' '' ' > ' '' ''1'NNNq_align_T3_R
+q_inc_Q' '' ''0' > ' '' ''1'NNNq_align_T3_R
+q_inc_Q' '' ''1' > ' '' ''0'NNLq_inc_Q
+q_align_T3_R' '' ''0' > ' '' ''0'NNRq_align_T3_R
+q_align_T3_R' '' ''1' > ' '' ''1'NNRq_align_T3_R
+q_align_T3_R' '' '' ' > ' '' '' 'NNLq_align_R_sub_start
+q_align_R_sub_start' '' ''0' > ' '' ''0'RRNq_align_R_sub
+q_align_R_sub_start' '' ''1' > ' '' ''1'RRNq_align_R_sub
+q_align_R_sub'0''0''0' > '0''0''0'RRNq_align_R_sub
+q_align_R_sub'0''1''0' > '0''1''0'RRNq_align_R_sub
+q_align_R_sub'1''0''0' > '1''0''0'RRNq_align_R_sub
+q_align_R_sub'1''1''0' > '1''1''0'RRNq_align_R_sub
+q_align_R_sub'0'' ''0' > '0'' ''0'RRNq_align_R_sub
+q_align_R_sub'1'' ''0' > '1'' ''0'RRNq_align_R_sub
+q_align_R_sub' ''0''0' > ' ''0''0'RRNq_align_R_sub
+q_align_R_sub' ''1''0' > ' ''1''0'RRNq_align_R_sub
+q_align_R_sub'0''0''1' > '0''0''1'RRNq_align_R_sub
+q_align_R_sub'0''1''1' > '0''1''1'RRNq_align_R_sub
+q_align_R_sub'1''0''1' > '1''0''1'RRNq_align_R_sub
+q_align_R_sub'1''1''1' > '1''1''1'RRNq_align_R_sub
+q_align_R_sub'0'' ''1' > '0'' ''1'RRNq_align_R_sub
+q_align_R_sub'1'' ''1' > '1'' ''1'RRNq_align_R_sub
+q_align_R_sub' ''0''1' > ' ''0''1'RRNq_align_R_sub
+q_align_R_sub' ''1''1' > ' ''1''1'RRNq_align_R_sub
+q_align_R_sub' '' ''0' > ' '' ''0'LLNq_sub
+q_align_R_sub' '' ''1' > ' '' ''1'LLNq_sub
+q_overdraw_align'0''0'' ' > '0''0'' 'RRNq_overdraw_align
+q_overdraw_align'0''1'' ' > '0''1'' 'RRNq_overdraw_align
+q_overdraw_align'1''0'' ' > '1''0'' 'RRNq_overdraw_align
+q_overdraw_align'1''1'' ' > '1''1'' 'RRNq_overdraw_align
+q_overdraw_align'0'' '' ' > '0'' '' 'RRNq_overdraw_align
+q_overdraw_align'1'' '' ' > '1'' '' 'RRNq_overdraw_align
+q_overdraw_align' ''0'' ' > ' ''0'' 'RRNq_overdraw_align
+q_overdraw_align' ''1'' ' > ' ''1'' 'RRNq_overdraw_align
+q_overdraw_align'0''0''0' > '0''0''0'RRNq_overdraw_align
+q_overdraw_align'0''1''0' > '0''1''0'RRNq_overdraw_align
+q_overdraw_align'1''0''0' > '1''0''0'RRNq_overdraw_align
+q_overdraw_align'1''1''0' > '1''1''0'RRNq_overdraw_align
+q_overdraw_align'0'' ''0' > '0'' ''0'RRNq_overdraw_align
+q_overdraw_align'1'' ''0' > '1'' ''0'RRNq_overdraw_align
+q_overdraw_align' ''0''0' > ' ''0''0'RRNq_overdraw_align
+q_overdraw_align' ''1''0' > ' ''1''0'RRNq_overdraw_align
+q_overdraw_align'0''0''1' > '0''0''1'RRNq_overdraw_align
+q_overdraw_align'0''1''1' > '0''1''1'RRNq_overdraw_align
+q_overdraw_align'1''0''1' > '1''0''1'RRNq_overdraw_align
+q_overdraw_align'1''1''1' > '1''1''1'RRNq_overdraw_align
+q_overdraw_align'0'' ''1' > '0'' ''1'RRNq_overdraw_align
+q_overdraw_align'1'' ''1' > '1'' ''1'RRNq_overdraw_align
+q_overdraw_align' ''0''1' > ' ''0''1'RRNq_overdraw_align
+q_overdraw_align' ''1''1' > ' ''1''1'RRNq_overdraw_align
+q_overdraw_align' '' '' ' > ' '' '' 'LLNq_restore_add
+q_overdraw_align' '' ''0' > ' '' ''0'LLNq_restore_add
+q_overdraw_align' '' ''1' > ' '' ''1'LLNq_restore_add
+q_restore_add'0''0'' ' > '0''0'' 'LLNq_restore_add
+q_restore_add'0''1'' ' > '1''1'' 'LLNq_restore_add
+q_restore_add'1''0'' ' > '1''0'' 'LLNq_restore_add
+q_restore_add'1''1'' ' > '0''1'' 'LLNq_restore_carry
+q_restore_add'0'' '' ' > '0'' '' 'LLNq_restore_add
+q_restore_add'1'' '' ' > '1'' '' 'LLNq_restore_add
+q_restore_add' ''0'' ' > '0''0'' 'LLNq_restore_add
+q_restore_add' ''1'' ' > '1''1'' 'LLNq_restore_add
+q_restore_add' '' '' ' > ' '' '' 'NNNqf
+q_restore_add'0''0''0' > '0''0''0'LLNq_restore_add
+q_restore_add'0''1''0' > '1''1''0'LLNq_restore_add
+q_restore_add'1''0''0' > '1''0''0'LLNq_restore_add
+q_restore_add'1''1''0' > '0''1''0'LLNq_restore_carry
+q_restore_add'0'' ''0' > '0'' ''0'LLNq_restore_add
+q_restore_add'1'' ''0' > '1'' ''0'LLNq_restore_add
+q_restore_add' ''0''0' > '0''0''0'LLNq_restore_add
+q_restore_add' ''1''0' > '1''1''0'LLNq_restore_add
+q_restore_add' '' ''0' > ' '' ''0'NNNqf
+q_restore_add'0''0''1' > '0''0''1'LLNq_restore_add
+q_restore_add'0''1''1' > '1''1''1'LLNq_restore_add
+q_restore_add'1''0''1' > '1''0''1'LLNq_restore_add
+q_restore_add'1''1''1' > '0''1''1'LLNq_restore_carry
+q_restore_add'0'' ''1' > '0'' ''1'LLNq_restore_add
+q_restore_add'1'' ''1' > '1'' ''1'LLNq_restore_add
+q_restore_add' ''0''1' > '0''0''1'LLNq_restore_add
+q_restore_add' ''1''1' > '1''1''1'LLNq_restore_add
+q_restore_add' '' ''1' > ' '' ''1'NNNqf
+q_restore_carry'0''0'' ' > '1''0'' 'LLNq_restore_add
+q_restore_carry'0''1'' ' > '0''1'' 'LLNq_restore_carry
+q_restore_carry'1''0'' ' > '0''0'' 'LLNq_restore_carry
+q_restore_carry'1''1'' ' > '1''1'' 'LLNq_restore_carry
+q_restore_carry'0'' '' ' > '1'' '' 'LLNq_restore_add
+q_restore_carry'1'' '' ' > '0'' '' 'LLNq_restore_carry
+q_restore_carry' ''0'' ' > '1''0'' 'LLNq_restore_add
+q_restore_carry' ''1'' ' > '0''1'' 'LLNq_restore_carry
+q_restore_carry' '' '' ' > ' '' '' 'NNNqf
+q_restore_carry'0''0''0' > '1''0''0'LLNq_restore_add
+q_restore_carry'0''1''0' > '0''1''0'LLNq_restore_carry
+q_restore_carry'1''0''0' > '0''0''0'LLNq_restore_carry
+q_restore_carry'1''1''0' > '1''1''0'LLNq_restore_carry
+q_restore_carry'0'' ''0' > '1'' ''0'LLNq_restore_add
+q_restore_carry'1'' ''0' > '0'' ''0'LLNq_restore_carry
+q_restore_carry' ''0''0' > '1''0''0'LLNq_restore_add
+q_restore_carry' ''1''0' > '0''1''0'LLNq_restore_carry
+q_restore_carry' '' ''0' > ' '' ''0'NNNqf
+q_restore_carry'0''0''1' > '1''0''1'LLNq_restore_add
+q_restore_carry'0''1''1' > '0''1''1'LLNq_restore_carry
+q_restore_carry'1''0''1' > '0''0''1'LLNq_restore_carry
+q_restore_carry'1''1''1' > '1''1''1'LLNq_restore_carry
+q_restore_carry'0'' ''1' > '1'' ''1'LLNq_restore_add
+q_restore_carry'1'' ''1' > '0'' ''1'LLNq_restore_carry
+q_restore_carry' ''0''1' > '1''0''1'LLNq_restore_add
+q_restore_carry' ''1''1' > '0''1''1'LLNq_restore_carry
+q_restore_carry' '' ''1' > ' '' ''1'NNNqf

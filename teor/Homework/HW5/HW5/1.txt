@@ -1,0 +1,24 @@
+23
+q1'0'' ' > '0''0'RRq1
+q1'1'' ' > '1''1'RRq1
+q1' '' ' > ' '' 'LLq2
+q2'0''0' > '0''0'LNq2
+q2'0''1' > '0''1'LNq2
+q2'1''0' > '1''0'LNq2
+q2'1''1' > '1''1'LNq2
+q2' ''0' > ' ''0'RNq3
+q2' ''1' > ' ''1'RNq3
+q3'0''0' > '0''0'RLq3
+q3'1''1' > '1''1'RLq3
+q3' '' ' > 'T'' 'NNqf
+q3'0''1' > '0''1'RNq_to_end_F
+q3'1''0' > '1''0'RNq_to_end_F
+q_to_end_F'0''0' > '0''0'RNq_to_end_F
+q_to_end_F'0''1' > '0''1'RNq_to_end_F
+q_to_end_F'0'' ' > '0'' 'RNq_to_end_F
+q_to_end_F'1''0' > '1''0'RNq_to_end_F
+q_to_end_F'1''1' > '1''1'RNq_to_end_F
+q_to_end_F'1'' ' > '1'' 'RNq_to_end_F
+q_to_end_F' ''0' > 'F''0'NNqf
+q_to_end_F' ''1' > 'F''1'NNqf
+q_to_end_F' '' ' > 'F'' 'NNqf

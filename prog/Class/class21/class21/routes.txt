@@ -1,0 +1,5 @@
+Lviv Kyiv 10 540.5
+Lviv Warsaw 5 400.0
+Kyiv Kharkiv 8 480.0
+Lviv Odessa 15 800.0
+Dnipro Lviv 15 900.0
