@@ -1,0 +1,5 @@
+﻿  Source.cpp
+E:\Uni\OC\asm\class5\vs\vs\Source.cpp(61,2): warning C4102: 'a_to_eax': unreferenced label
+E:\Uni\OC\asm\class5\vs\vs\Source.cpp(66,2): warning C4102: 'b_to_ebx': unreferenced label
+E:\Uni\OC\asm\class5\vs\vs\Source.cpp(71,2): warning C4102: 'end': unreferenced label
+  vs.vcxproj -> E:\Uni\OC\asm\class5\vs\Debug\vs.exe
