@@ -7,7 +7,7 @@ def fib1(n, memo = None):
     return (memo[n])
 
 def fib2(n):
-    if n == 0:
+    if (n == 0):
         return (0)
     a, b = 0, 1
     for i in range(2, n+1):
@@ -15,5 +15,4 @@ def fib2(n):
     return(b)
     
 
-print(fib2(10))
-
+print(fib1(100))
