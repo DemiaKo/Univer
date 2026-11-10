@@ -69,36 +69,36 @@ def pprint(mem=mem):
         print('|', lines[i], sep='')
 
 
-
-print("Please set memory size and max output width:")
-a = input("> ")
-max_s = int(a.split()[0])
-max_l = int(a.split()[1])
-
-while True:
-    a = input(">").strip()
-    if not a:
-        continue
-            
-    parts = a.split()
+if __name__ == "__main__":
+    print("Please set memory size and max output width:")
+    a = input("> ")
+    max_s = int(a.split()[0])
+    max_l = int(a.split()[1])
     
-    if parts[0] == 'allocate':
-        res = malloc(int(parts[1]))
-        print(res) 
+    while True:
+        a = input(">").strip()
+        if not a:
+            continue
+                
+        parts = a.split()
         
-    elif parts[0] == 'free':
-        free(int(parts[1]))
-        
-    elif parts[0] == 'print':
-        pprint()
-        
-    elif parts[0] == 'help':
-        print("Available commands:\n")
-        print("  help    - show this help")
-        print("  exit    - exit this program")
-        print("  print   - print memory blocks map")
-        print("  allocate <num> - allocate <num> cells. Returns block first cell number")
-        print("  free <num> - free block with first cell number <num>")
-        
-    elif parts[0] == 'exit':
-        break
+        if parts[0] == 'malloc':
+            res = malloc(int(parts[1]))
+            print(res) 
+            
+        elif parts[0] == 'free':
+            free(int(parts[1]))
+            
+        elif parts[0] == 'print':
+            pprint()
+            
+        elif parts[0] == 'help':
+            print("Available commands:\n")
+            print("  help    - show this help")
+            print("  exit    - exit this program")
+            print("  print   - print memory blocks map")
+            print("  malloc <num> - allocate <num> cells. Returns block first cell number")
+            print("  free <num> - free block with first cell number <num>")
+            
+        elif parts[0] == 'exit':
+            break

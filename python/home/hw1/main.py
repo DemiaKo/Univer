@@ -14,5 +14,5 @@ def fib2(n):
         a, b = b, a + b
     return(b)
     
-
-print(fib1(100))
+if __name__ == "__main__":
+    print(fib1(100))

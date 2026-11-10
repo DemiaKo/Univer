@@ -8,7 +8,8 @@ table = b.find("table")
 rows = table.find_all("tr")
 row = rows[1]
 row = row.find_all("td")
-print(row[2])
-
-
-  #  //*[@id="root"]/div/section/div/div/div/div/section[1]/div[2]/div[1]/div[2]/table/tbody/tr/td[2]/div
+for i in range(1, 4):
+  divs = row[i].find_all("div")
+  print(divs[0].get_text())
+  
+  #  //*[@id="root"]/div/section/div/div/div/div/section[1]/div[2]/div[1]/div[2]/table/tbody/tr/td[2]/divі

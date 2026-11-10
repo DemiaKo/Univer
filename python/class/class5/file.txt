@@ -1,0 +1,6 @@
+20 Lviv Fran 5
+20 Lviv Fran 5
+30 Lviv Kyiv 3
+29 Lviv Kyiv 3
+1 Lviv Kyiv 3
+1 Kyiv Kyiv 3
